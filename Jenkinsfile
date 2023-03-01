@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+		label 'ssh'
+	}
 	tools {
         maven 'maven1' 
     }
