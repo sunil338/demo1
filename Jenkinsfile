@@ -2,9 +2,7 @@ pipeline {
 	agent {
 		label 'ssh'
 	}
-	tools {
-        maven 'maven1' 
-    }
+	
 	stages {
 		stage ('build') {
 			steps {
@@ -22,6 +20,12 @@ pipeline {
 					archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 				}
 			}
+		}
+		stage ('build image') {
+			steps {
+				sh 'docker build .'
+			}
+		
 		}
 	
 	}
