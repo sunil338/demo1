@@ -1,6 +1,13 @@
 pipeline {
 
 	agent any
+	triggers {
+  cron '* * * * * '
+}
+	tools {
+  maven 'm360'
+}
+	
 	parameters {
   string defaultValue: 'adi', name: 'name', trim: true
 }
@@ -13,7 +20,9 @@ pipeline {
 
 	  stage('test') {
 		  steps {
-				sh 'echo $name'
+				withCredentials([usernameColonPassword(credentialsId: '39f51006-4e86-4d30-a082-28edff8d27d1', variable: 'login')]) {
+    sh 'docker login'
+}
 			}
 		 post {
 			 always{
