@@ -1,10 +1,6 @@
 pipeline {
 
 	agent any
-	tools {
-		maven 'm360'
-	}
-
 	stages {
 	  stage('build') {
 		steps {
