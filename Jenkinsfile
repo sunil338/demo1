@@ -1,9 +1,7 @@
 pipeline {
 
 	agent any
-	triggers {
-  cron '* * * * * '
-}
+	
 	tools {
   maven 'm360'
 }
