@@ -21,7 +21,7 @@ pipeline {
 	  stage('test') {
 		  steps {
 				withCredentials([usernameColonPassword(credentialsId: '39f51006-4e86-4d30-a082-28edff8d27d1', variable: 'login')]) {
-    sh 'docker login'
+    sh 'docker login -u adikathik -p $login'
 }
 			}
 		 post {
