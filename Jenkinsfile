@@ -1,6 +1,9 @@
 pipeline {
 
 	agent any
+	parameters {
+  string defaultValue: 'adi', name: 'name', trim: true
+}
 	stages {
 	  stage('build') {
 		steps {
@@ -10,7 +13,7 @@ pipeline {
 
 	  stage('test') {
 		  steps {
-				sh 'echo a'
+				sh 'echo $name'
 			}
 		 post {
 			 always{
