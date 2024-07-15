@@ -30,7 +30,9 @@ pipeline {
 			}
 	  }
 		stage('delete') {
+			steps {
 deleteDir()
+			}
 		}
 }
 
