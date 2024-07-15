@@ -13,14 +13,10 @@ pipeline {
 	  }
 
 	  stage('test') {
-		steps {
-		  
-		  
-		  post {
+		 post {
 				archiveArtifacts artifacts: 'target/**.jar', followSymlinks: false
 				junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
 			}
-		}
 	  }
 
 }
