@@ -1,6 +1,9 @@
 pipeline {
 
-	agent any
+	agent {
+  label 'win'
+}
+
 	
 	tools {
   maven 'm360'
