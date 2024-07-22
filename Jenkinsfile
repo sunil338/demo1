@@ -19,12 +19,12 @@ pipeline {
 
 	  stage('test') {
 		  steps {
-				sh 'echo test'
+				sh 'echo new'
 			}
 		 post {
 			 always{
 				archiveArtifacts artifacts: 'target/**.jar', followSymlinks: false
-				junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
+			
 			 }
 			}
 	  }
