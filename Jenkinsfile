@@ -1,8 +1,6 @@
 pipeline {
 
-	agent {
-  label 'win'
-}
+	agent any
 
 	
 	tools {
