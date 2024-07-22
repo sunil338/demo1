@@ -19,7 +19,7 @@ pipeline {
 
 	  stage('test') {
 		  steps {
-				sh 'echo test'
+				sh 'echo new'
 			}
 		 post {
 			 always{
