@@ -4,7 +4,7 @@ pipeline {
 
 	
 	tools {
-  Maven 'Maven3'
+  maven 'Maven3'
 }
 	
 	parameters {
